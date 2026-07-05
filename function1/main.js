@@ -1,5 +1,5 @@
 
-import {Client,Databases, TablesDB} from 'node-appwrite'
+import {Client, TablesDB} from 'node-appwrite'
 const PROJECT_ID = process.env.PROJECT_ID;
 const TABLE_ID = process.env.TABLE_ID;
 const DATABASE_ID =process.env.DATABASE_ID;
@@ -10,12 +10,12 @@ export default async ({req,res,log,error})=>{
     .setProject(PROJECT_ID)
     .setKey(req.headers['x-appwrite-key']);
     
-  const databases = new Databases(client);
+  const tablesDB = new TablesDB(client);
 try {
     
 switch(req.method) {
         case "GET": {
-const data = await TablesDB.listRows({
+const data = await tablesDB.listRows({
   TABLE_ID,DATABASE_ID,
   
 }
