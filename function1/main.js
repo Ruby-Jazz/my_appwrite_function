@@ -16,8 +16,8 @@ try {
 switch(req.method) {
         case "GET": {
 const data = await tablesDB.listRows({
-  TABLE_ID,DATABASE_ID,
-  
+  tableId : TABLE_ID,
+  databaseId : DATABASE_ID
 }
 )
 res.json(data.rows)
