@@ -20,7 +20,7 @@ const data = await tablesDB.listRows({
   databaseId : DATABASE_ID
 }
 )
-res.json(data.rows)
+ return res.json(data.rows)
         }
            
         
@@ -37,7 +37,7 @@ res.json(data.rows)
     error(err)
     res.json({
         success: "false",
-        message: error.message,
+        message: err.message,
     })
     
 }
