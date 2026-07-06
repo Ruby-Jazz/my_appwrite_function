@@ -27,7 +27,7 @@ export default async ({ req, res, log, error }) => {
 
             case "GET": {
                 const data = await tablesDB.listRows(
-                {tableId:TablesDB, databaseId:DATABASE_ID
+                {tableId:TABLE_ID, databaseId:DATABASE_ID
                 }
                 );
 
